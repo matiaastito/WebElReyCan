@@ -1,0 +1,34 @@
+﻿@model WebElReyCan.Models.Turno
+
+@{
+    ViewData["Title"] = "Modificar";
+}
+
+<h1>@Model.TurnoId</h1>
+<div>
+    @using (Html.BeginForm("Edit", "Turno", FormMethod.Post))
+    {
+        @Html.HiddenFor(model => model.TurnoId)
+        @Html.HiddenFor(model => model.Nombre)
+        @Html.HiddenFor(model => model.Raza)
+        @Html.HiddenFor(model => model.Edad)
+        @Html.HiddenFor(model => model.NombreDueño)
+        <p>
+            @Html.LabelFor(model => model.FechaIngreso)
+            @Html.EditorFor(model => model.FechaIngreso)
+            @Html.ValidationMessageFor(model => model.FechaIngreso)
+        </p>
+        <p>
+            @Html.LabelFor(model => model.HoraIngreso)
+            @Html.EditorFor(model => model.HoraIngreso)
+            @Html.ValidationMessageFor(model => model.HoraIngreso)
+        </p>
+        <p>
+            @Html.LabelFor(model => model.Celular)
+            @Html.EditorFor(model => model.Celular)
+            @Html.ValidationMessageFor(model => model.Celular)
+        </p>
+        <input type="submit" value="Modificar" class="modificar" />
+        @Html.ActionLink("Ir a Index", "Index", "Turno")
+    }
+</div>

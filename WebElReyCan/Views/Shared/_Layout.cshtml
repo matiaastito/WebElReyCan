@@ -1,0 +1,44 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="~/Content/Site.css" rel="stylesheet" />
+    <title>@ViewBag.Title</title>
+</head>
+<body>
+    <header class="header">
+        <section class="header__banner">
+            
+        </section>
+        <div class="header__nav">
+            <section>logo</section>
+            <section>login</section>
+        </div>
+    </header>
+    <nav>
+        @Html.ActionLink("Inicio", "Index", "Home")
+        @Html.ActionLink("Turnos", "Index", "Turno")
+    </nav>
+    <main>
+        <aside>
+            @if (IsSectionDefined("logo"))
+            {
+                @RenderSection("")
+            }
+            else
+            {
+                <a href="https://es.wikipedia.org/wiki/Peluquero_canino">Mas Info</a>
+            }
+        </aside>
+        <article>
+            @RenderBody()
+        </article>
+    </main>
+    <footer class="footer">
+        <h4>elreycan@mail.com</h4>
+    </footer>
+</body>
+</html>
+

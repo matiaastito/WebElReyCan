@@ -1,0 +1,48 @@
+﻿@model WebElReyCan.Models.Turno
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<div>
+    @using (Html.BeginForm("Create", "Turno", FormMethod.Post))
+    {
+        <p>
+            @Html.LabelFor(model => model.FechaIngreso)
+            @Html.EditorFor(model => model.FechaIngreso)
+            @Html.ValidationMessageFor(model => model.FechaIngreso)
+        </p>
+        <p>
+            @Html.LabelFor(model => model.HoraIngreso)
+            @Html.EditorFor(model => model.HoraIngreso)
+            @Html.ValidationMessageFor(model => model.HoraIngreso)
+        </p>
+        <p>
+            @Html.LabelFor(model => model.Nombre)
+            @Html.EditorFor(model => model.Nombre)
+            @Html.ValidationMessageFor(model => model.Nombre)
+        </p>
+        <p>
+            @Html.LabelFor(model => model.Raza)
+            @Html.EditorFor(model => model.Raza)
+            @Html.ValidationMessageFor(model => model.Raza)
+        </p>
+        <p>
+            @Html.LabelFor(model => model.Edad)
+            @Html.EditorFor(model => model.Edad)
+            @Html.ValidationMessageFor(model => model.Edad)
+        </p>
+        <p>
+            @Html.LabelFor(model => model.NombreDueño)
+            @Html.EditorFor(model => model.NombreDueño)
+            @Html.ValidationMessageFor(model => model.NombreDueño)
+        </p>
+        <p>
+            @Html.LabelFor(model => model.Celular)
+            @Html.EditorFor(model => model.Celular)
+            @Html.ValidationMessageFor(model => model.Celular)
+        </p>
+        <input type="submit" value="Crear" />
+        @Html.ActionLink("Volver a Index", "Index", "Turno")
+    }
+</div>

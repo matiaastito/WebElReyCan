@@ -1,0 +1,72 @@
+﻿@model  IEnumerable<WebElReyCan.Models.Turno>
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<div>@Html.ActionLink("Nuevo Turno","Create","Turno")</div>
+<div>@Html.ActionLink("Turnos de Hoy", "IndexToday", "Turno")</div>
+
+<table >
+    <thead>
+        <tr >
+            <th >
+                @Html.DisplayNameFor(model => model.FechaIngreso)
+            </th>
+            <th class="bordeNegro">
+                @Html.DisplayNameFor(model => model.HoraIngreso)
+            </th>
+            <th class="bordeNegro">
+                @Html.DisplayNameFor(model => model.Nombre)
+            </th>
+            <th class="bordeNegro">
+                @Html.DisplayNameFor(model => model.Raza)
+            </th>
+            <th class="bordeNegro">
+                @Html.DisplayNameFor(model => model.Edad)
+            </th>
+            <th class="bordeNegro">
+                @Html.DisplayNameFor(model => model.NombreDueño)
+            </th>
+            <th class="bordeNegro">
+                @Html.DisplayNameFor(model => model.Celular)
+            </th>
+            <th></th>
+            <th></th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr class="bordeNegro">
+                <td class="bordeNegro">
+                    @Html.DisplayFor(modelItem => item.FechaIngreso)
+                </td>
+                <td class="bordeNegro">
+                    @Html.DisplayFor(modelItem => item.HoraIngreso)
+                </td>
+                <td class="bordeNegro">
+                    @Html.DisplayFor(modelItem => item.Nombre)
+                </td>
+                <td class="bordeNegro">
+                    @Html.DisplayFor(modelItem => item.Raza)
+                </td>
+                <td class="bordeNegro">
+                    @Html.DisplayFor(modelItem => item.Edad)
+                </td>
+                <td class="bordeNegro">
+                    @Html.DisplayFor(modelItem => item.NombreDueño)
+                </td>
+                <td class="bordeNegro">
+                    @Html.DisplayFor(modelItem => item.Celular)
+                </td>
+                <td class="bordeNegro">@Html.ActionLink("Editar", "Edit", new { id = item.TurnoId })</td>
+        
+                <td class="bordeNegro">@Html.ActionLink("Eliminar", "Delete", new { id = item.TurnoId })</td>
+            </tr>
+        }
+    </tbody>
+</table
+
